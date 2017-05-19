@@ -1,0 +1,7 @@
+{
+  "main": "index.html",
+  "name": "Rex",
+  "webkit": {
+    "plugin": true
+  }
+}
