@@ -1,5 +1,5 @@
 const DEFAULT_CONFIG = {
-  TITLE: 'Rex'        // index.html head title
+  TITLE: 'Rex - 项目辅助工具'        // index.html head title
 };
 
 const SERVER_CONFIG = {
