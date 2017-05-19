@@ -13,7 +13,9 @@ const PATH_CONFIG = {
 
 const RESOLVE_CONFIG = {
   EXTENSIONS: ['.js', '.json'],    //webpck extensions
-  ALIAS:{}                          //webpck alias
+  ALIAS:{
+     'vue$': 'vue/dist/vue.common.js'
+  }                          //webpck alias
 };
 
 module.exports = {

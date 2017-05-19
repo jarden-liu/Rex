@@ -73,5 +73,8 @@
     "webpack-dev-server": "^2.4.5",
     "webpack-hot-middleware": "^2.18.0",
     "webpack-merge": "^4.1.0"
+  },
+  "dependencies": {
+    "vue": "^2.3.3"
   }
 }

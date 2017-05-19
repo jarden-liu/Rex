@@ -12,6 +12,19 @@ const stylusLoader = extractCssPlugin.extract(['css-loader','autoprefixer-loader
 
 var htmlPlugin = new HtmlWebpackPlugin({filename: 'index.html', template: resolve(`${PATH_CONFIG.MAIN}/index.html`), inject: true, title: DEFAULT_CONFIG.TITLE});
 
+var vueLoaderOptions = new webpack.LoaderOptionsPlugin({
+  test: /\.vue$/,
+  options: {
+    vue: {
+      loaders: {
+        css: cssLoader,
+        sass: sassLoader
+      },
+      postcss: [require('autoprefixer')({browsers: ['last 2 versions']})]
+    }
+  }
+});
+
 module.exports = {
   target:'node-webkit',
   entry: {
@@ -34,7 +47,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.[vue|js]$/,
         enforce: "pre",
         use: [
           {
@@ -45,6 +58,9 @@ module.exports = {
           }
         ],
         exclude: /node_modules/
+      }, {
+        test: /\.vue$/,
+        loader: 'babel-loader'
       }, {
         test: /\.js$/,
         use: [

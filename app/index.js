@@ -1,4 +1,5 @@
 // App entry, type your magical code  here.
+import Vue from 'vue';
 console.log('hello world');
 var fs = require('fs');
 
