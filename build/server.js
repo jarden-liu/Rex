@@ -53,7 +53,7 @@ function startNwjsClient() {
       shell.echo('Sorry, this client requires nw, maybe you try \'sudo npm install -g nw\'');
       shell.exit(1);
     }else{
-      shell.exec('nw .dev_client', {async: true});
+      shell.exec('nw .dev_client --remote-debugging-port=9222', {async: true});
     }
   });
 }
