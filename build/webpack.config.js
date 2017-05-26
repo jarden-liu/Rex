@@ -97,7 +97,16 @@ module.exports = {
         query: {
           limit: 10000, //低于10kb的直接变成base64
           name: 'assets/[name].[ext]?[hash]'
-        }
+        },
+        exclude: /icon/
+      }, {
+        test: /\.(png|jpg|gif|svg|jpeg)$/,
+        loader: 'url-loader',
+        query: {
+          limit: 1, //低于10kb的直接变成base64
+          name: 'assets/[name].[ext]'
+        },
+        include: /icon/
       }, {
         test: /\.((eot|woff|ttf)[\?]?.*)$/,
         loader: 'url-loader',
